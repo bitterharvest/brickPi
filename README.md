@@ -8,8 +8,9 @@ The library consists of C language programs, foreign function interfaces and tes
 The foreign function interface to BrickPi.h and tick.h is provided as Haskell program BrickHs.hs. Application programs written in Haskell has to call BrickHs.ha when using LEGO motors and sensors. 
 
 Test programs are provided for testing motors, an ultra-sonic sensor, touch sensor and color sensor. You can compile a test program by the following command.
+
 ghc –make test-program.hs BrickPi.o tick.o
 
-You may use BrickPi.c and tick.c instead to BrickPi.o and tick.o.  
+You may use BrickPi.c and tick.c instead of BrickPi.o and tick.o.  
 
 As we can get the foreign function interfaces, we will develop an intelligent bot using reactive functional programming.
