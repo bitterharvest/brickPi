@@ -45,9 +45,9 @@ type_motor_position = 2 :: Int
 
 type_sensor_raw = 0 :: Int
 type_sensor_light_off = 0 :: Int
-{--
-type_sensor_light_on = (mask_d0_m | mask_d0_s)
---}
+
+type_sensor_light_on = 9 :: Int  -- (MASK_D0_M | MASK_D0_S)
+
 type_sensor_touch = 32 :: Int
 type_sensor_ultrasonic_cont = 33 :: Int
 type_sensor_ultrasonic_ss = 34 :: Int
@@ -91,10 +91,8 @@ type_sensor_ev3_infrared_m5 = 66 :: Int
 
 type_sensor_ev3_touch_0	= 67 :: Int
 
-{--
-bit_i2c_mid  0x01  
-bit_i2c_same 0x02 
---}
+bit_i2c_mid = 1 :: Int -- 0x01  
+bit_i2c_same = 2 :: Int -- 0x02 
 
 index_red = 0 :: Int
 index_green = 1 :: Int
@@ -104,10 +102,8 @@ index_blank = 3 :: Int
 i2c_speed = 10 :: Int
 us_i2c_idx = 0 :: Int
 
-{--
-lego_us_i2c_addr = 0x02
-lego_us_i2c_data_reg = 0x42
---}
+lego_us_i2c_addr = 2 :: Int --0x02
+lego_us_i2c_data_reg = 66 :: Int --0x42
 
 foreign import ccall "BrickPi.h BrickPiSetup" c_brickPiSetup :: IO CInt
 brickPiSetup :: IO Int
